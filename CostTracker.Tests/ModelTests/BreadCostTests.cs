@@ -27,10 +27,10 @@ namespace CostTracker.Tests
     public void ApplyDiscount_TakeTotalCostAndApplyDiscount_DiscountAmount()
     {
       CalculateBread newBread = new CalculateBread();
-      newBread.SetBreadBought(5);
+      newBread.SetBreadBought(4);
       newBread.MultiplyBread();
-      newBread.ApplyDiscount();
-      Assert.AreEqual(20 newBread.CostAfterDiscount);
+      newBread.SetDiscount();
+      Assert.AreEqual(5, newBread.TotalDiscount);
 
     }
   }
