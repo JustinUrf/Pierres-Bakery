@@ -1,15 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CostTracker.Models;
-using System;
 
 namespace CostTracker.Tests
 {
   [TestClass]
   public class PastryCost 
   {
-    public void BreadCalulation_CountInstancesOfBread_AmountOfBread()
+    [TestMethod]
+    public void SetAmountOfPastry_ChecksInstancesOfPastry_Amount() 
     {
-
+      CalculatePastry newPastry = new CalculatePastry();
+      int amountOfPastry = newPastry.SetPastryBought(4);
+      Assert.AreEqual(4, amountOfPastry);
     }
 
   }

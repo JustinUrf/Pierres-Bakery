@@ -39,11 +39,11 @@ namespace CostTracker.Tests
     public void CostOfBread_TakeTotalCostAndDiscountCalculateFinalAmount_WhatCustomerPays() 
     {
       CalculateBread newBread = new CalculateBread();
-      newBread.SetBreadBought(5);
+      newBread.SetBreadBought(4);
       newBread.MultiplyBread();
       newBread.SetDiscount();
       int result = newBread.CalcualateCost();
-      Assert.AreEqual(20, result);
+      Assert.AreEqual(15, result);
     }
   }
 }
