@@ -30,9 +30,23 @@ namespace CostTracker.Tests
     {
       CalculatePastry newPastry = new CalculatePastry();
       newPastry.SetPastryBought(9);
-      newPastry.SetDiscount();
-      int discountResult = newPastry.TotalDiscount;
+      newPastry.SetPastryDiscount();
+      int discountResult = newPastry.PastryTotalDiscount;
       Assert.AreEqual(4, discountResult);
     }
+
+    [TestMethod]
+    public void PastryCalculateCost_ReturnTotalCost_FinalAmount()
+    {
+      CalculatePastry newPastry = new CalculatePastry();
+      newPastry.SetPastryBought(15);
+      newPastry.MultiplyPastry();
+      newPastry.SetPastryDiscount();
+      int totalResult = newPastry.CalculateCost();
+      Assert.AreEqual(24, totalResult);
+    }
+  
   }
+
+
 }
