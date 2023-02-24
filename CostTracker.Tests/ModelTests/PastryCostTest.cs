@@ -24,5 +24,15 @@ namespace CostTracker.Tests
       int result =  newPastry.pastryTotal;
       Assert.AreEqual(8, result);
     }
+
+    [TestMethod]
+    public void PastrySetDiscount_TakeNumberOfPastriesAndGetDiscount_DiscountAmount()
+    {
+      CalculatePastry newPastry = new CalculatePastry();
+      newPastry.SetPastryBought(9);
+      newPastry.SetDiscount();
+      int discountResult = newPastry.TotalDiscount;
+      Assert.AreEqual(4, discountResult);
+    }
   }
 }
