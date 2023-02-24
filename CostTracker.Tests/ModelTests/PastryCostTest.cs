@@ -15,5 +15,14 @@ namespace CostTracker.Tests
       Assert.AreEqual(4, amountOfPastry);
     }
 
+    [TestMethod]
+    public void TotalCostBeforeDiscount_MultiplyGivenInstancesOfPastry_TotalAmount()
+    {
+      CalculatePastry newPastry = new CalculatePastry();
+      newPastry.SetPastryBought(4);
+      newPastry.MultiplyPastry();
+      int result =  newPastry.pastryTotal;
+      Assert.AreEqual(8, result);
+    }
   }
 }
