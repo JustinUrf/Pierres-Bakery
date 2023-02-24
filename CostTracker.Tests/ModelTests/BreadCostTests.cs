@@ -1,17 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CostTracker.Models;
-using System;
 
 namespace CostTracker.Tests
 {
   [TestClass]
-  public class BreadCostTests 
+  public class BreadCostTest
   {
-    public void BreadCalulation_CountInstancesOfBread_AmountOfBread()
+    [TestMethod]
+    public void BreadCostConstructor_ChecksInstancesOfBread_Amount()
     {
-      CalculateBread testAmount = new CalculateBread();
-      Assert.AreEqual(1, testAmount);
+      CalculateBread newBread = new CalculateBread();
+      Assert.AreEqual(1, 0);
     }
-
   }
 }
