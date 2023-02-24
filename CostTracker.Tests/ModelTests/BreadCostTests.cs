@@ -10,7 +10,8 @@ namespace CostTracker.Tests
     public void BreadCostConstructor_ChecksInstancesOfBread_Amount()
     {
       CalculateBread newBread = new CalculateBread();
-      Assert.AreEqual(1, 0);
+      newBread.SetBreadBought(4);
+      Assert.AreEqual(4, newBread._breadsBought);
     }
   }
 }
