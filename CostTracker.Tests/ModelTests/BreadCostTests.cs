@@ -30,6 +30,7 @@ namespace CostTracker.Tests
       CalculateBread newBread = new CalculateBread();
       newBread.SetBreadBought(4);
       newBread.MultiplyBread();
+      newBread.SetDiscount();
       int result = newBread.TotalDiscount;
       Assert.AreEqual(5, result);
     }
@@ -41,7 +42,7 @@ namespace CostTracker.Tests
       newBread.SetBreadBought(5);
       newBread.MultiplyBread();
       newBread.SetDiscount();
-      int result = newBread.CalculateCost();
+      int result = newBread.CalcualateCost();
       Assert.AreEqual(20, result);
     }
   }
