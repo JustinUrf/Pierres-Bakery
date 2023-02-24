@@ -10,7 +10,8 @@ namespace CostTracker.Tests
     public void SetAmountOfPastry_ChecksInstancesOfPastry_Amount() 
     {
       CalculatePastry newPastry = new CalculatePastry();
-      int amountOfPastry = newPastry.SetPastryBought(4);
+      newPastry.SetPastryBought(4);
+      int amountOfPastry = newPastry.PastriesBought;
       Assert.AreEqual(4, amountOfPastry);
     }
 
