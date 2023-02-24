@@ -20,18 +20,29 @@ namespace CostTracker.Tests
       CalculateBread newBread = new CalculateBread();
       newBread.SetBreadBought(5);
       newBread.MultiplyBread();
-      Assert.AreEqual(25, newBread.TotalCost);
+      int testTotalCost = newBread.TotalCost;
+      Assert.AreEqual(25, testTotalCost);
     }
 
     [TestMethod]
-    public void ApplyDiscount_TakeTotalCostAndApplyDiscount_DiscountAmount()
+    public void ApplyDiscount_TakeNumberOfBreadAndGetDiscount_DiscountAmount()
     {
       CalculateBread newBread = new CalculateBread();
       newBread.SetBreadBought(4);
       newBread.MultiplyBread();
-      newBread.SetDiscount();
-      Assert.AreEqual(5, newBread.TotalDiscount);
+      int result = newBread.TotalDiscount;
+      Assert.AreEqual(5, result);
+    }
 
+    [TestMethod]
+    public void CostOfBread_TakeTotalCostAndDiscountCalculateFinalAmount_WhatCustomerPays() 
+    {
+      CalculateBread newBread = new CalculateBread();
+      newBread.SetBreadBought(5);
+      newBread.MultiplyBread();
+      newBread.SetDiscount();
+      int result = newBread.CalculateCost();
+      Assert.AreEqual(20, result);
     }
   }
 }
