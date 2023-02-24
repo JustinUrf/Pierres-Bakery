@@ -1,9 +1,11 @@
 using System;
-using BreadCost.Models;
-using PastryCost.Models;
+using CostTracker.Models;
 
 namespace CostTracker {
   class Program {
-    
+    static void Main()
+    {
+
+    }
   }
 }

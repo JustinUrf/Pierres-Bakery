@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PastryCost.Models
+namespace CostTracker.Models
 {
   public class CalculatePastry 
   {
