@@ -22,7 +22,24 @@ namespace CostTracker {
     {
       Console.WriteLine("Confirm the amount of Bread and Pastries you have in your basket:");
       Console.WriteLine($"Amount of Bread: {amntOfBread}.");
-      Console.WriteLine($"Amount of Pastries; {amntOfPastry}.");
+      Console.WriteLine($"Amount of Pastries: {amntOfPastry}.");
+      Console.WriteLine("Is this what you want from Pierre's bakery? Enter 'yes' to proceed, or 'no' to re-renter the amount of bread and pastries!");
+      string userInput = Console.ReadLine();
+      if (userInput == "yes") 
+      {
+        TotalCost(amntOfBread, amntOfPastry);
+      }
+      else
+      {
+        Console.WriteLine("Oops! Lets change your order then. Please enter how many bread and pastries you want");
+        Console.WriteLine("How many bread loafs do you want?");
+        string redoBread = Console.ReadLine();
+        Console.WriteLine("How many pastries would yhou like?");
+        string redoPastries = Console.ReadLine();
+        int redoBreadToInt = int.Parse(redoBread);
+        int redoPastriesToInt = int.Parse(redoPastries);
+        ConfirmOrderOrChangeOrder(redoBreadToInt, redoPastriesToInt);
+      }
     }
   }
 }
