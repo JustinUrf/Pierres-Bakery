@@ -13,7 +13,16 @@ namespace CostTracker {
       string breadNumberStr = Console.ReadLine();
       Console.WriteLine("How many Pastries would you like?");
       string pastryNumberStr = Console.ReadLine();
-      
+      int breadNumber = int.Parse(breadNumberStr);
+      int pastryNumber = int.Parse(pastryNumberStr);
+      ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
+    }
+
+    static void ConfirmOrderOrChangeOrder(int amntOfBread, int amntOfPastry)
+    {
+      Console.WriteLine("Confirm the amount of Bread and Pastries you have in your basket:");
+      Console.WriteLine($"Amount of Bread: {amntOfBread}.");
+      Console.WriteLine($"Amount of Pastries; {amntOfPastry}.");
     }
   }
 }
