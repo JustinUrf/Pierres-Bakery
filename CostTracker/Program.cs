@@ -41,5 +41,44 @@ namespace CostTracker {
         ConfirmOrderOrChangeOrder(redoBreadToInt, redoPastriesToInt);
       }
     }
+
+    static void TotalCost(int numberOfBreadPurchased, int numberOfPastriesPurchased)
+    {
+      CalculateBread newBread = new CalculateBread();
+      newBread.SetBreadBought(numberOfBreadPurchased);
+      newBread.MultiplyBread();
+      newBread.SetDiscount();
+      int breadCost = newBread.CalcualateCost();
+      CalculatePastry newPastry = new CalculatePastry();
+      newPastry.SetPastryBought(numberOfPastriesPurchased);
+      newPastry.MultiplyPastry();
+      newPastry.SetPastryDiscount();
+      int pastryCost = newPastry.CalculateCost();
+      int totalCost = pastryCost + breadCost;
+      Console.WriteLine("-----------------------------");
+      Console.WriteLine($"Your cost for bread is ${breadCost} and your pastries total to ${pastryCost}.");
+      Console.WriteLine($"Your total cost is ${totalCost}.");
+      Console.WriteLine("Would you like to place another order? Enter 'yes' to create a new order and to exit, press any key");
+      string newOrder = Console.ReadLine();
+      if (newOrder == "yes")
+      {
+        NewOrder();
+      }
+      else
+      {
+        Console.WriteLine("Thanks for shopping at Pierre's Bakery.");
+      }
+    }
+
+    static void NewOrder()
+    {
+      Console.WriteLine("How many loafs of bread would you like?");
+      string breadNumberStr = Console.ReadLine();
+      Console.WriteLine("How many Pastries would you like?");
+      string pastryNumberStr = Console.ReadLine();
+      int breadNumber = int.Parse(breadNumberStr);
+      int pastryNumber = int.Parse(pastryNumberStr);
+      ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
+    }
   }
 }
