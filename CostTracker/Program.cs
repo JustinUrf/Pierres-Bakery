@@ -5,7 +5,7 @@ namespace CostTracker {
   class Program {
     static void Main()
     {
-      Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~");
+      Console.WriteLine("");
       Console.WriteLine("Welcome to Pierre Bakery Shop");
       Console.WriteLine("Bread is $5's each and Pastries are $2's each!");
       Console.WriteLine("We are currently running a special for bread where every 2 you get the third one free and for every 3 pastries you get one free!");
@@ -88,6 +88,19 @@ namespace CostTracker {
       else
       {
         Console.WriteLine("Thanks for shopping at Pierre's Bakery.");
+        Console.WriteLine("Hope to see you again soon and if you want to visit us again, please hit that dotnet run one more time");
+        Console.WriteLine("Our business is only alive if you keep us running please don't shut out the lights");
+        Console.WriteLine("Are you sure you want to close the business? You better come back");
+        Console.ReadKey();
+        Console.WriteLine("This is definitly not a desperate play to keep you here.");
+        Console.ReadKey();
+        Console.WriteLine("Just press yes if you want to leave no pressure... Or you can just not and let us live in your processing power");
+        Console.ReadKey();
+        Console.WriteLine("..... we're not here don't mind us");
+        Console.ReadKey();
+        Console.WriteLine("...................................................................................................................................................................................................................................................................................");
+        Console.ReadKey();
+        Console.WriteLine("Vanished.... just like that huh? Hope you keep supporting your local bakeries!");
       }
     }
 
