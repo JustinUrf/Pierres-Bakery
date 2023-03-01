@@ -11,12 +11,11 @@ namespace CostTracker {
       Console.WriteLine("We are currently running a special for bread where every 2 you get the third one free and for every 3 pastries you get one free!");
       Console.WriteLine("How many loafs of bread would you like?");
       string breadNumberStr = Console.ReadLine();
-      if (!int.TryParse(breadNumberStr, out int value)){
-        Console.WriteLine("Please enter a proper value");
-        breadNumberStr = Console.ReadLine();
-      }
       Console.WriteLine("How many Pastries would you like?");
       string pastryNumberStr = Console.ReadLine();
+      if (!int.TryParse(breadNumberStr, out int value) || !int.TryParse(pastryNumberStr, out int pastryValue)){
+        CatchError();
+      }
       int breadNumber = int.Parse(breadNumberStr);
       int pastryNumber = int.Parse(pastryNumberStr);
       ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
@@ -25,7 +24,16 @@ namespace CostTracker {
     static void CatchError() {
       Console.WriteLine("You have entered an erronous order!");
       Console.WriteLine("Please enter a number, i.e '5' or '8'");
-      Console.WriteLine("")
+      Console.WriteLine("How many loafs of bread would you like?");
+      string breadNumberStr = Console.ReadLine();
+      Console.WriteLine("How many Pastries would you like");
+      string pastryNumberStr = Console.ReadLine();
+      if (!int.TryParse(breadNumberStr, out int value) || !int.TryParse(pastryNumberStr, out int pastryValue)){
+        CatchError();
+      }
+      int breadNumber = int.Parse(breadNumberStr);
+      int pastryNumber = int.Parse(pastryNumberStr);
+      ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
     }
 
     static void ConfirmOrderOrChangeOrder(int amntOfBread, int amntOfPastry)
@@ -46,6 +54,9 @@ namespace CostTracker {
         string redoBread = Console.ReadLine();
         Console.WriteLine("How many pastries would yhou like?");
         string redoPastries = Console.ReadLine();
+      if (!int.TryParse(redoBread, out int value) || !int.TryParse(redoPastries, out int pastryValue)){
+        CatchError();
+      }
         int redoBreadToInt = int.Parse(redoBread);
         int redoPastriesToInt = int.Parse(redoPastries);
         ConfirmOrderOrChangeOrder(redoBreadToInt, redoPastriesToInt);
@@ -86,6 +97,9 @@ namespace CostTracker {
       string breadNumberStr = Console.ReadLine();
       Console.WriteLine("How many Pastries would you like?");
       string pastryNumberStr = Console.ReadLine();
+      if (!int.TryParse(breadNumberStr, out int value) || !int.TryParse(pastryNumberStr, out int pastryValue)){
+        CatchError();
+      }
       int breadNumber = int.Parse(breadNumberStr);
       int pastryNumber = int.Parse(pastryNumberStr);
       ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
