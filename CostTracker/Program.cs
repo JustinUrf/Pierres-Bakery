@@ -11,11 +11,21 @@ namespace CostTracker {
       Console.WriteLine("We are currently running a special for bread where every 2 you get the third one free and for every 3 pastries you get one free!");
       Console.WriteLine("How many loafs of bread would you like?");
       string breadNumberStr = Console.ReadLine();
+      if (!int.TryParse(breadNumberStr, out int value)){
+        Console.WriteLine("Please enter a proper value");
+        breadNumberStr = Console.ReadLine();
+      }
       Console.WriteLine("How many Pastries would you like?");
       string pastryNumberStr = Console.ReadLine();
       int breadNumber = int.Parse(breadNumberStr);
       int pastryNumber = int.Parse(pastryNumberStr);
       ConfirmOrderOrChangeOrder(breadNumber, pastryNumber);
+    }
+
+    static void CatchError() {
+      Console.WriteLine("You have entered an erronous order!");
+      Console.WriteLine("Please enter a number, i.e '5' or '8'");
+      Console.WriteLine("")
     }
 
     static void ConfirmOrderOrChangeOrder(int amntOfBread, int amntOfPastry)
